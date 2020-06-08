@@ -1,0 +1,4 @@
+INFO -- data_ingestion.py -- 2020-06-08 15:55:28,325  -- Data Loading and manipulations starts initially 
+INFO -- data_ingestion.py -- 2020-06-08 15:55:28,410  -- Started Reading the 'image_names' columns of dataframe
+INFO -- data_ingestion.py -- 2020-06-08 15:55:48,236  -- Start Splitting train and test data
+INFO -- data_ingestion.py -- 2020-06-08 15:55:48,267  -- Successfully Completed Splitting train and test data
