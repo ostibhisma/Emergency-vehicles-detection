@@ -5,6 +5,8 @@ import pandas as pd
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
+import warnings
+warnings.filterwarnings('ignore')
 
 class Dataloader:
     """
@@ -53,7 +55,7 @@ class Dataloader:
             return self.images
         
         except Exception as e:
-            self.obj.error(f"Error occusrs {e}")
+            self.obj.error(f"Error occurs :{e}")
         self.obj.info("Successfully completed reading 'images_name' columns and al images are appended to list ")
     
     def getData(self,images):
@@ -95,7 +97,7 @@ class Dataloader:
             return self.X_train,self.X_test,self.y_train,self.y_test
         
         except Exception as e:
-            self.obj.error(f"Error occusrs {e}")
+            self.obj.error("Error occusrs {e}")
 
         self.obj.info("Successfully Completed Loading and manipulating all data")
 
