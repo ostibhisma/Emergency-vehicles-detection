@@ -1,4 +1,7 @@
-INFO -- data_ingestion.py -- 2020-06-08 15:55:28,325  -- Data Loading and manipulations starts initially 
-INFO -- data_ingestion.py -- 2020-06-08 15:55:28,410  -- Started Reading the 'image_names' columns of dataframe
-INFO -- data_ingestion.py -- 2020-06-08 15:55:48,236  -- Start Splitting train and test data
-INFO -- data_ingestion.py -- 2020-06-08 15:55:48,267  -- Successfully Completed Splitting train and test data
+INFO -- data_ingestion.py -- 2020-06-10 14:19:30,477  -- Data Loading and manipulations starts initially 
+INFO -- data_ingestion.py -- 2020-06-10 14:19:30,680  -- Started Reading the 'image_names' columns of dataframe
+INFO -- data_ingestion.py -- 2020-06-10 14:19:52,290  -- Start Splitting train and test data
+INFO -- data_ingestion.py -- 2020-06-10 14:19:52,291  -- Successfully Completed Splitting train and test data
+INFO -- model.py -- 2020-06-10 14:19:57,043  -- Initially Started Creating Model
+INFO -- model.py -- 2020-06-10 14:19:58,011  -- Started Training the model
+ERROR -- model.py -- 2020-06-10 14:19:58,019  -- Error Occurs as : `x` (images tensor) and `y` (labels) should have the same length. Found: x.shape = (1316, 224, 224, 3), y.shape = (330, 2)
