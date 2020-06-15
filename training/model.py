@@ -36,42 +36,43 @@ class Model:
 
         """
         try:
-            num_features = 64
-            num_labels = 2
-            width, height, channels = 224, 224, 3
-            self.train_aug = ImageDataGenerator(rescale = 1./255,rotation_range=20,horizontal_flip=True,zoom_range=0.2,shear_range=0.2)
-            self.test_aug = ImageDataGenerator(rescale = 1./255)
+        num_features = 64
+	num_labels = 2
+	width, height, channels = 224, 224, 3
+	self.train_aug = ImageDataGenerator(rescale = 1./255,rotation_range=20,horizontal_flip=True,zoom_range=0.2,shear_range=0.2)
+	self.test_aug = ImageDataGenerator(rescale = 1./255)
 
-            model = Sequential()
+	model = Sequential()
 
-            model.add(Conv2D(num_features, kernel_size=(3, 3), activation='relu', input_shape=(width, height, channels), data_format='channels_last'))
-            model.add(MaxPooling2D(pool_size=(2, 2)))
-            model.add(Dropout(0.2))
+	model.add(Conv2D(num_features, kernel_size=(3, 3), activation='relu', input_shape=(width, height, channels), data_format='channels_last'))
+	model.add(BatchNormalization())
+	model.add(MaxPooling2D(pool_size=(2, 2)))
+	model.add(Dropout(0.5))
 
-            model.add(Conv2D(2*num_features, kernel_size=(3, 3), activation='relu'))
-            model.add(MaxPooling2D(pool_size=(2, 2)))
-            model.add(Dropout(0.3))
-            
-            model.add(Conv2D(2*2*num_features, kernel_size=(3, 3), activation='relu'))
-            model.add(MaxPooling2D(pool_size=(2, 2)))
-            model.add(Dropout(0.3))
+	model.add(Conv2D(2*num_features, kernel_size=(3, 3), activation='relu'))
+	model.add(BatchNormalization())
+	model.add(MaxPooling2D(pool_size=(2, 2)))
+	model.add(Dropout(0.5))
+
+	model.add(Conv2D(2*2*num_features, kernel_size=(3, 3), activation='relu'))
+	model.add(BatchNormalization())
+	model.add(MaxPooling2D(pool_size=(2, 2)))
+	model.add(Dropout(0.5))
 
 
 
-            model.add(Flatten())
-            
-            model.add(Dense(2*2*num_features, activation='relu'))
-            model.add(Dropout(0.4))
 
-            model.add(Dense(2*num_features, activation='relu'))
-            model.add(Dropout(0.4))
-        
-            model.add(Dense(num_features, activation='relu'))
-            model.add(Dropout(0.5))
+	model.add(Flatten())
 
-            model.add(Dense(num_labels, activation='softmax'))
 
-            return model
+	model.add(Dense(2*2*num_features, activation='relu'))
+	model.add(Dropout(0.5))
+
+	model.add(Dense(2*num_features, activation='relu'))
+	model.add(Dropout(0.5))
+
+
+	model.add(Dense(num_labels, activation='softmax'))
 
             self.logging_obj.info("Successfully Completed Creating Model")
 
@@ -92,7 +93,7 @@ class Model:
 
         """
         try:
-            BATCH_SIZE = 4
+            BATCH_SIZE = 32
             EPOCHS = 20       
             
             model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
