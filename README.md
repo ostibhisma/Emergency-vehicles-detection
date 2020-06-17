@@ -13,14 +13,14 @@ The tutorial to get started is here https://www.tensorflow.org/tutorials
      - Rename the folder inside the `data` folder named `emergency_train.csv` to `train.csv`.
   
   - Create new environment for the project using **virtualenv**
-    > `virtualenv -v venev -p python3.7`
+    > `virtualenv -v venev -p python3.7` .
       > `source venv/bin/activate`
     
   - Install all dependencies:
     > `pip install -r requirements.txt`
     
-  ## Training
-    - To train the model and use it enter following command:
-      > `python main.py`
+## Training
+  - To train the model and use it enter following command:
+    > `python main.py`
       
- ## Thank you 
+## Thank you 
