@@ -1,6 +1,8 @@
 # Emergency-vehicles-detection
 This is the emergency vechicles like Ambulance,police car, fire buses,school buses,etc detection project.
 
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
+
 ## Getting Started
 The tutorial to get started is here https://www.tensorflow.org/tutorials 
 
