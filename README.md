@@ -16,8 +16,9 @@ The tutorial to get started is here https://www.tensorflow.org/tutorials
      - Now place the `data` folder to Project's main directory 
   
   - Create new environment for the project using **virtualenv**
-    > ```virtualenv -v venev -p python3.7 <br/>
-    > source venv/bin/activate
+     ```
+    virtualenv -v venev -p python3.7
+    source venv/bin/activate
     ```
     
   - Install all dependencies:
